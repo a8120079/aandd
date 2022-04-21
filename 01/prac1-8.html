@@ -11,23 +11,26 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-            //prac1-5〜 1から10までの数を順に10個挿入する
-            for (var i = 0; i < 10; i++) {
-                numbers.push(i);
-            }
-            show(numbers);
-            //prac1-5 全ての要素に10を足す
-            for (var j = 0; j < 10; j++) {
-                numbers[j] = numbers[j] + 10;
-            }
+            //prac1-8 N個の乱数を挿入する関数を作る
+            //関数名：createRandomNumbers(array, n)
+            //できたら，関数定義をaandd.jsに移す
+            createRandomNumbers(numbers, 6);
             show(numbers);
         }
+
+        function createRandomNumbers(array, n) {
+            for (var i = 1; i <= n; i++){
+                var x = Math.floor(Math.random() * 100);
+                array.push(x);
+            }
+         }
+
     </script>
 
 </head>
 
 <body>
-    <h1>prac1-5</h1>
+    <h1>prac1-8</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
