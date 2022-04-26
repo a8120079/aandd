@@ -11,25 +11,37 @@
     <script>
         function runButtonPressed() {
             //prac2-1 10個の順数（１，２，３．．．の数列）を生成し，２番目と４番目を入れ替える
+            // var array = [];
+            // createSequentialNumbers(array, 10);
+            // show(array);
+            // var tmp = array[1]
+            // array[1] = array[3]
+            // array[3] = tmp
+            // show(array);
+            
+            //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
+
+            //(nとmは乱数にて決定する)
+            //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
             var array = [];
             createSequentialNumbers(array, 10);
             show(array);
-            var tmp = array[1]
-            array[1] = array[3]
-            array[3] = tmp
-            show(array);
             
-            //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
-            // x = Math.floor(Math.random() * 10) + 1
-            //(nとmは乱数にて決定する)
-            //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
+            for (var i = 1; i < 20; i++) {
+                n = Math.floor(Math.random() * 10);
+                m = Math.floor(Math.random() * 10);
+                var tmp = array[n]
+                array[n] = array[m]
+                array[m] = tmp
+            }
+            show(array);
         }
     </script>
 
 </head>
 
 <body>
-    <h1>prac2-1</h1>
+    <h1>prac2-3</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
