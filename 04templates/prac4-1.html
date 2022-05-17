@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            //prac4-1 10個の乱数をつくって、2を足した配列をつくる
+            var array = [];
+            for (var i = 0; i < 10; i++) {
+                var x = Math.floor(Math.random() * 21)
+                array.push(x);
+            }
+            show(array);
+            for (var j = 0; j < array.length; j++) {
+                array[j] = array[j] + 2;
+            }
+            show(array);
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac4-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

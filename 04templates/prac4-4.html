@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            //prac4-1 10個の乱数をつくって、2を足した配列をつくる
+            //prac4-2 10以上の要素を抽出
+            //prac4-3 リニアサーチで検索
+            //prac4-4 バイナリサーチで検索
+            var array = [];
+            createOrderedRandomNumbers(array, 10)
+            show(array);
+            var number = document.getElementById('id_textBox1').value;
+            
+            var upper = array.length - 1;
+            var lower = 0;
+            
+            
+            for (; ;) {//無限ループ
+                var middle = Math.floor((upper + lower) / 2);
+                if (array[middle] == number) {
+                    show("番地は" + middle);
+                    break;
+                }
+                else if (array[middle] < number) {
+                    //探す値より小さい場合、左端の値を真ん中の値の右に移動する
+                    lower = middle;
+                }
+                else if (array[middle] > number) {
+                    upper = middle;
+                }
+                
+                if (lower + 1 == upper) {
+                    show("見つかりませんでした");
+                    break
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac4-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <input name="textBox1" id="id_textBox1" type="text" value="" />
+    <p id="res"></p>
+</body>
+
+</html>
