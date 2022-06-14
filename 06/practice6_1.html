@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var text = document.getElementById('name').value;
+            const list_new = text.split('');
+            show(list_new)
+            // 6-1入力した文字列を回転させる
+            var x = list_new.length
+            var array_new = [];
+            for (var i = 0; i < x; i++) {
+                var num = list_new.pop();
+                array_new.push(num);
+            }
+            show(array_new);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>split</h1>
+    <input id="name" type="text">
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
