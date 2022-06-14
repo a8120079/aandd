@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var text = document.getElementById('name').value;
+            const list_new = text.split('');
+            // show(list_new)
+            // 6-2入力した文字列が回文か判定する
+            var x = list_new.length
+            var array_new = [];
+            for (var i = 0; i < x; i++) {
+                var num = list_new.pop();
+                array_new.push(num);
+            }
+            var y = array_new.join('');
+
+            console.log(text)
+            console.log(y)
+            // console.log(list_new)
+            if (text == y) {
+                show("回文です")
+            }
+            else {
+                show("回文ではありません")
+            }
+            // show(array_new);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>split</h1>
+    <input id="name" type="text">
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
